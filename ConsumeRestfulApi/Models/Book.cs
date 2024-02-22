@@ -4,10 +4,10 @@ namespace ConsumeRestfulApi.Models
     internal class Book : ISupportsHypermedia
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public DateTime LaunchDate { get; set; }
-        public decimal Price { get; set; }
-        public List<HyperMediaLink> Links { get; set; }
+        public required string Title { get; set; }
+        public required string Author { get; set; }
+        public required DateTime LaunchDate { get; set; }
+        public required decimal Price { get; set; }
+        public List<HyperMediaLink>? Links { get; set; }
     }
 }

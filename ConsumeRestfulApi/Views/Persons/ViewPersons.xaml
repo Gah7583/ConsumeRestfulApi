@@ -10,7 +10,15 @@
       Title="Persons">
 
     <Grid>
-        <Button x:Name="btnAddPerson" Content="Add Person" Height="32" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400 30 0 0" Click="BtnAddPerson_Click"/>
+        <Button x:Name="btnAddPerson" Foreground="#ffdbf3ff" Background="#ff357392" Content="Add Person" Height="32" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400 30 0 0" Click="BtnAddPerson_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="12">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <DataGrid x:Name="dgPersons" Style="{StaticResource DataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>

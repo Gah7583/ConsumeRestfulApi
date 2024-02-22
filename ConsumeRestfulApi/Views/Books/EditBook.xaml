@@ -27,7 +27,15 @@
             <Border CornerRadius="12" Background="#ff545aea">
                 <DatePicker x:Name="dptxtLaunchDate" Width="250" Height="32" Background="{x:Null}" BorderBrush="{x:Null}"/>
             </Border>
-            <Button x:Name="btnSave" Content="Save" FontSize="16" Height="32" Margin="0 20 0 0" Click="BtnSave_Click"/>
+            <Button x:Name="btnSave" Foreground="#ffdbf3ff" Background="#ff357392" Content="Save" FontSize="16" Height="32" Margin="0 20 0 0" Click="BtnSave_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

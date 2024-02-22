@@ -1,0 +1,38 @@
+﻿<Page x:Class="ConsumeRestfulApi.Views.Books.ViewBooks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ConsumeRestfulApi.Views.Books"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700"
+      Style="{StaticResource PageStyle}"
+      Title="Books">
+
+    <Grid>
+        <Button x:Name="btnAddBook" Content="Add Book" Height="32" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400 30 0 0" Click="BtnAddBook_Click"/>
+        <DataGrid x:Name="dgBooks" Style="{StaticResource DataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
+                <DataGridTextColumn Header="Author" Binding="{Binding Path=Author}"/>
+                <DataGridTextColumn Header="Launch Date" Binding="{Binding Path=LaunchDate}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"/>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource DataGridButton}" x:Name="btnEditBook" Click="BtnEditBook_Click" Content="Edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource DataGridButton}" x:Name="btnDeleteBook" Click="BtnDeleteBook_Click" Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

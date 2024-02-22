@@ -1,0 +1,38 @@
+﻿<Page x:Class="ConsumeRestfulApi.Views.Persons.ViewPersons"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ConsumeRestfulApi.Views.Persons"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700"
+      Style="{StaticResource PageStyle}"
+      Title="Persons">
+
+    <Grid>
+        <Button x:Name="btnAddPerson" Content="Add Person" Height="32" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400 30 0 0" Click="BtnAddPerson_Click"/>
+        <DataGrid x:Name="dgPersons" Style="{StaticResource DataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Fist Name" Binding="{Binding Path=FirstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Path=LastName}"/>
+                <DataGridTextColumn Header="Adress" Binding="{Binding Path=Address}"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding Path=Gender}"/>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource DataGridButton}" x:Name="btnEditPerson" Click="BtnEditPerson_Click" Content="Edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource DataGridButton}" x:Name="btnDeletePerson" Click="BtnDeletePerson_Click" Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
